@@ -22,7 +22,6 @@ def display(num):
             output = f"{inte[0]}.{inte[1:5]}e{str(len(inte) - 1)}"
             entry.insert(0, output)
 
-
 def click(number):
     current = entry.get()
     if "." in current and number == ".":
@@ -31,14 +30,12 @@ def click(number):
         entry.delete(0, 'end')
         entry.insert(0, str(current) + str(number))
 
-
 def calculate(method):
     global number_1
     global formula
     number_1 = entry.get()
     entry.delete(0, 'end')
     formula = method
-
 
 def equal():
     number_2 = entry.get()
@@ -63,10 +60,8 @@ def equal():
         result = 1 / float(number_1)
     display(result)
 
-
 def clear():
     entry.delete(0, "end")
-
 
 entry = tk.Entry(window)
 entry.grid(row=0, column=0, padx=20, pady=10, columnspan=4)
