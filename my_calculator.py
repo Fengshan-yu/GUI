@@ -16,7 +16,7 @@ def display(num):
             entry.insert(0, round(num, (10 - len(inte))))
         elif len(decimal) > 1 and int(inte) == 0:
             zeros = decimal.count("0")
-            output = f"{decimal[zeros]}.{decimal[zeros:(zeros + 3)]}e-{zeros}"
+            output = f"{decimal[zeros]}.{decimal[(zeros+1):(zeros+4)]}e-{zeros}"
             entry.insert(0, output)
         else:
             output = f"{inte[0]}.{inte[1:5]}e{str(len(inte) - 1)}"
