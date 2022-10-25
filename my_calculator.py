@@ -10,17 +10,14 @@ def display(num):
     if len(str(num)) <= 10:
         entry.insert(0, num)
     else:
-        inte = str(num).split(".")[0]
+        inter = str(num).split(".")[0]
         decimal = str(num).split(".")[1]
-        if len(decimal) > 1 and int(inte) > 0:
-            entry.insert(0, round(num, (10 - len(inte))))
-        elif len(decimal) > 1 and int(inte) == 0:
-            zeros = decimal.count("0")
-            output = f"{decimal[zeros]}.{decimal[(zeros+1):(zeros+4)]}e-{zeros}"
-            entry.insert(0, output)
+        if len(decimal) > 1:
+            entry.insert(0, round(num, (10-len(inter))))
         else:
-            output = f"{inte[0]}.{inte[1:5]}e{str(len(inte) - 1)}"
+            output = f"{inter[0]}.{inter[1:5]}e{str(len(inter)-1)}"
             entry.insert(0, output)
+
 
 def click(number):
     current = entry.get()
